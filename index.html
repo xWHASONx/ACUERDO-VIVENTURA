@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acta de Entrega - Vivantura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f8;
+            font-family: 'Poppins', sans-serif;
+            color: #1d1d1f;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .document-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #FE8050; /* Coral */
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        .header img {
+            max-width: 250px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #293241;
+            margin: 0;
+        }
+        .meta-data {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            font-size: 14px;
+            color: #5f5f63;
+        }
+        h2 {
+            font-size: 16px;
+            color: #14A7CA; /* Turquesa */
+            text-transform: uppercase;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        p, li {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        ul li::before {
+            content: "✓";
+            color: #2ecc71;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .warning-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #FFC300;
+            padding: 15px;
+            font-size: 13px;
+            margin: 20px 0;
+            color: #5c4000;
+        }
+        .signatures {
+            margin-top: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .sig-block {
+            border-top: 1px solid #000;
+            padding-top: 10px;
+            font-size: 14px;
+        }
+        .sig-block strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* Botón para imprimir (no sale en el PDF) */
+        .print-btn-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .print-btn {
+            background-color: #FE8050;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(254, 128, 80, 0.4);
+            transition: transform 0.2s;
+        }
+        .print-btn:hover {
+            transform: scale(1.05);
+        }
+
+        @media print {
+            body { background-color: white; padding: 0; }
+            .document-container { box-shadow: none; padding: 0; margin: 0; }
+            .print-btn-container { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-btn-container">
+        <button class="print-btn" onclick="window.print()">🖨️ Imprimir / Descargar PDF</button>
+    </div>
+
+    <div class="document-container">
+        <div class="header">
+            <img src="https://i.imgur.com/GiTvvrW.png" alt="Vivantura">
+            <h1>Acta de Entrega de Software</h1>
+        </div>
+
+        <div class="meta-data">
+            <span id="date-placeholder">Fecha: </span>
+            <span>Ref: Entrega Final de Desarrollo Web</span>
+        </div>
+
+        <p>Por medio del presente documento se formaliza la entrega de las soluciones tecnológicas desarrolladas a medida para <strong>VIVANTURA</strong>.</p>
+
+        <h2>1. Herramientas Entregadas</h2>
+        <ul>
+            <li><strong>Generador de Cotizaciones Pro:</strong> Sistema para crear propuestas comerciales en PDF con cálculo automático.</li>
+            <li><strong>Generador de Confirmaciones:</strong> Sistema para emitir comprobantes de pago y reserva.</li>
+        </ul>
+
+        <h2>2. Componentes Técnicos (Checklist)</h2>
+        <p>El desarrollador certifica la entrega y configuración funcional de:</p>
+        <ul>
+            <li>Código fuente (HTML, CSS, JS) con la identidad visual de Vivantura.</li>
+            <li>Integración con <strong>EmailJS</strong> para envío de correos desde el dominio de la empresa.</li>
+            <li>Integración con <strong>Firebase</strong> para el almacenamiento en la nube de los documentos.</li>
+            <li>Configuración de plantillas de correo y estilos de PDF.</li>
+        </ul>
+
+        <h2>3. Nota Importante sobre Servicios de Terceros</h2>
+        <div class="warning-box">
+            <strong>⚠️ ESTADO DE GOOGLE MAPS:</strong><br>
+            La funcionalidad de "Autocompletado de Direcciones" en los formularios depende directamente de la plataforma Google Cloud. Actualmente, el código está listo para funcionar, pero <strong>requiere que EL CLIENTE finalice la validación bancaria de su tarjeta corporativa</strong> en la consola de Google.
+            <br><br>
+            Una vez el banco autorice la tarjeta, el servicio se activará automáticamente. El desarrollador no se hace responsable por bloqueos bancarios o administrativos ajenos al código.
+        </div>
+
+        <h2>4. Propiedad Intelectual</h2>
+        <p>A partir de la firma de este documento, <strong>Vivantura</strong> adquiere la totalidad de los derechos sobre el software entregado, teniendo libertad para su uso, modificación y explotación comercial.</p>
+
+        <h2>5. Aceptación</h2>
+        <p>El Cliente declara recibir las herramientas a satisfacción, habiendo verificado su correcto funcionamiento (generación de documentos, cálculos y envío de correos).</p>
+
+        <div class="signatures">
+            <div class="sig-block">
+                <strong>RECIBIDO POR (CLIENTE):</strong>
+                Nombre: _______________________<br>
+                Vivantura<br>
+                NIT: 901965026-0
+            </div>
+            <div class="sig-block">
+                <strong>ENTREGADO POR (DESARROLLADOR):</strong>
+                Firma: ________________________<br>
+                CC: __________________________
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Poner la fecha de hoy automáticamente
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('date-placeholder').textContent = "Fecha: " + new Date().toLocaleDateString('es-ES', dateOptions);
+    </script>
+
+</body>
+</html>
